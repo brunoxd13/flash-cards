@@ -1,28 +1,31 @@
 import React from "react";
 import { ScrollView } from "react-native";
 import SimpleCard from "./SimpleCard";
+import { Content } from "native-base";
 
 const SimpleCardContainer = ({ categories }) => {
   return (
     <ScrollView>
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
+      <Content padder>
+        <SimpleCard />
+        <SimpleCard />
+        <SimpleCard />
+        <SimpleCard />
+        <SimpleCard />
+        <SimpleCard />
+        <SimpleCard />
+        <SimpleCard />
+        <SimpleCard />
+        <SimpleCard />
+        <SimpleCard />
+        <SimpleCard />
+        <SimpleCard />
+        <SimpleCard />
+        <SimpleCard />
+        <SimpleCard />
+        <SimpleCard />
+        <SimpleCard />
+      </Content>
     </ScrollView>
   );
 };
