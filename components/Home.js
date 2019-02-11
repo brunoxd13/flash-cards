@@ -1,11 +1,11 @@
-import React from "react";
-import { Container } from "native-base";
+import React, { Component } from "react";
+import { View, Button } from "react-native";
 import SimpleCardContainer from "./SimpleCardContainer";
-import { Button } from "react-native";
-import AddCategory from "./AddCategory";
+import DeckDetail from "./DeckDetail";
+import CardDetail from "./base/CardDetail";
 
-export default class Home extends React.Component {
-  static navigationOptions = {
+export default class Home extends Component {
+  static navigationOptions = ({ navigation }) => ({
     headerTitle: "Flash Cards",
     headerTintColor: "#FFFFFF",
     headerStyle: {
@@ -13,19 +13,19 @@ export default class Home extends React.Component {
     },
     headerRight: (
       <Button
-        onPress={() => alert("This is a button!")}
+        onPress={() => navigation.navigate("NewDeck")}
         title="+"
         color="#FFFFFF"
       />
     )
-  };
+  });
 
   render() {
     return (
-      <Container>
-        {/* <AddCategory /> */}
+      <View style={{ padding: 3, backgroundColor: "#E5E5E5" }}>
         <SimpleCardContainer />
-      </Container>
+        {/* <CardDetail /> */}
+      </View>
     );
   }
 }
