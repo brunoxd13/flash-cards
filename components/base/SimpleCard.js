@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-export default class CardDetail extends Component {
+export default class SimpleCard extends Component {
   render() {
     return (
       <View style={styles.card}>

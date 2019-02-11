@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Button } from "react-native";
 import SimpleCardContainer from "./SimpleCardContainer";
-import DeckDetail from "./DeckDetail";
+// import DeckDetail from "./DeckDetail";
 import CardDetail from "./base/CardDetail";
 
 export default class Home extends Component {
