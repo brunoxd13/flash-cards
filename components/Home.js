@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { View, Button } from "react-native";
+import { View, Button, ScrollView } from "react-native";
 import SimpleCardContainer from "./SimpleCardContainer";
-// import DeckDetail from "./DeckDetail";
 import CardDetail from "./base/CardDetail";
+import AddDeck from "./AddDeck";
 
 export default class Home extends Component {
   static navigationOptions = ({ navigation }) => ({
@@ -22,9 +22,12 @@ export default class Home extends Component {
 
   render() {
     return (
-      <View style={{ padding: 3, backgroundColor: "#E5E5E5" }}>
-        <SimpleCardContainer />
-        {/* <CardDetail /> */}
+      <View style={{ flex: 1, padding: 3, backgroundColor: "#E5E5E5" }}>
+        <ScrollView>
+          <AddDeck />
+          {/* <SimpleCardContainer /> */}
+          {/* <CardDetail /> */}
+        </ScrollView>
       </View>
     );
   }

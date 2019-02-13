@@ -1,16 +1,9 @@
-import React from "react";
-import {
-  Button,
-  Text,
-  Form,
-  Item,
-  Input,
-  Label,
-  Content,
-  Container
-} from "native-base";
+import React, { Component } from "react";
+import { TextInput, View } from "react-native";
+import { Card } from "./base/styled/Card";
+import { LigthText } from "./base/styled/Text";
 
-export default class AddDeck extends React.Component {
+export default class AddDeck extends Component {
   static navigationOptions = {
     headerTitle: "New Deck",
     headerTintColor: "#FFFFFF",
@@ -21,20 +14,19 @@ export default class AddDeck extends React.Component {
 
   render() {
     return (
-      <Container>
-        <Form>
-          <Item stackedLabel>
-            <Label>Deck Name</Label>
-            <Input />
-          </Item>
-        </Form>
-
-        <Content padder>
-          <Button block style={{ backgroundColor: "#5EC9F7" }}>
-            <Text>AddDeck</Text>
-          </Button>
-        </Content>
-      </Container>
+      <View>
+        <Card>
+          <LigthText>Teste</LigthText>
+          <TextInput
+            style={{
+              borderBottomColor: "#878787",
+              borderBottomWidth: 1,
+              marginTop: 3,
+              fontSize: 19
+            }}
+          />
+        </Card>
+      </View>
     );
   }
 }
