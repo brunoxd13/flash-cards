@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { TextInput, View } from "react-native";
-import { Card } from "./base/styled/Card";
-import { LigthText } from "./base/styled/Text";
+import { View } from "react-native";
+import TextInput from "./base/TextInput";
+import Button from "./base/Button";
 
 export default class AddDeck extends Component {
   static navigationOptions = {
@@ -12,20 +12,32 @@ export default class AddDeck extends Component {
     }
   };
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      deckName: ""
+    };
+
+    this.handleFieldChange = this.handleFieldChange.bind(this);
+  }
+
+  handleFieldChange(fieldId, value) {
+    this.setState({ [fieldId]: value });
+  }
+
   render() {
     return (
       <View>
-        <Card>
-          <LigthText>Teste</LigthText>
-          <TextInput
-            style={{
-              borderBottomColor: "#878787",
-              borderBottomWidth: 1,
-              marginTop: 3,
-              fontSize: 19
-            }}
-          />
-        </Card>
+        <TextInput
+          id="deckName"
+          title="Deck Name"
+          onHandleChange={this.handleFieldChange}
+        />
+
+        <Button primary onPress={() => {}}>
+          Add Deck
+        </Button>
       </View>
     );
   }
