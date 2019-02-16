@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { Card } from "./styled/Card";
-import { StrongText, LigthText } from "./styled/Text";
-import { HorizontalLine } from "./styled/HorizontalLine";
+import { Card } from "./Card";
+import { StrongText, LigthText } from "./Text";
+import { HorizontalLine } from "./HorizontalLine";
 
 export default class CardDetail extends Component {
   render() {
