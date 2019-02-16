@@ -1,7 +1,6 @@
-import React from "react";
 import { createAppContainer, createStackNavigator } from "react-navigation";
-import Home from "./Home";
-import AddDeck from "./AddDeck";
+import Home from "../components/Home";
+import AddDeck from "../components/AddDeck";
 
 const MainNavigator = createStackNavigator({
   Home: {
