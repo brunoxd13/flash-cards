@@ -7,7 +7,7 @@ export const fetchDecks = () => {
 };
 
 export const addDeck = deck => {
-  AsyncStorage.mergeItem(DECKS_STORAGE_KEY, JSON.stringify(deck));
+  return AsyncStorage.mergeItem(DECKS_STORAGE_KEY, JSON.stringify(deck));
 };
 
 //TODO: remove Deck
@@ -16,4 +16,6 @@ export const setDecks = decks => {
   AsyncStorage.setItem(DECKS_STORAGE_KEY, JSON.stringify(decks));
 };
 
-//TODO: remove Decks
+export const resetDecks = () => {
+  return AsyncStorage.removeItem(DECKS_STORAGE_KEY);
+};
