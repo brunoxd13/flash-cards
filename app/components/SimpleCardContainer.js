@@ -1,30 +1,36 @@
-import React from "react";
+import React, { Component } from "react";
 import { ScrollView } from "react-native";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import SimpleCard from "./base/SimpleCard";
+import { fetchDecks } from "../store/actions/decks";
 
-const SimpleCardContainer = ({ categories }) => {
-  return (
-    <ScrollView>
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-      <SimpleCard />
-    </ScrollView>
-  );
-};
+class SimpleCardContainer extends Component {
+  componentDidMount() {
+    fetchDecks();
+  }
 
-export default SimpleCardContainer;
+  render() {
+    return (
+      <ScrollView>
+        {Object.values(this.props.decks).map(deck => (
+          <SimpleCard key={deck.title} deck={deck} />
+        ))}
+      </ScrollView>
+    );
+  }
+}
+
+function mapStateToProps({ decks }) {
+  return {
+    decks: decks
+  };
+}
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ fetchDecks }, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SimpleCardContainer);
