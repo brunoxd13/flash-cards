@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View } from "react-native";
+import { ScrollView } from "react-native";
 import TextInput from "./base/TextInput";
 import Button from "./base/Button";
 
@@ -28,7 +28,7 @@ export default class AddDeck extends Component {
 
   render() {
     return (
-      <View>
+      <ScrollView style={{ padding: 3, backgroundColor: "#E5E5E5" }}>
         <TextInput
           id="deckName"
           title="Deck Name"
@@ -38,7 +38,7 @@ export default class AddDeck extends Component {
         <Button primary onPress={() => {}}>
           Add Deck
         </Button>
-      </View>
+      </ScrollView>
     );
   }
 }
