@@ -3,11 +3,11 @@ import { ScrollView } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import SimpleCard from "./base/SimpleCard";
-import { fetchDecks } from "../store/actions/decks";
+import { handleFetchDecks } from "../store/actions/decks";
 
 class SimpleCardContainer extends Component {
   componentDidMount() {
-    fetchDecks();
+    this.props.handleFetchDecks();
   }
 
   render() {
@@ -28,7 +28,7 @@ function mapStateToProps({ decks }) {
 }
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ fetchDecks }, dispatch);
+  bindActionCreators({ handleFetchDecks }, dispatch);
 
 export default connect(
   mapStateToProps,

@@ -1,4 +1,4 @@
-import { RECIVE_DECKS } from "../actions/decks";
+import { RECIVE_DECKS, ADD_DECK } from "../actions/decks";
 
 const initialState = {
   React: {
@@ -32,6 +32,12 @@ export default function decks(state = { ...initialState }, action) {
       return {
         ...state,
         ...action.decks
+      };
+
+    case ADD_DECK:
+      return {
+        ...state,
+        ...action.deck
       };
 
     default:
