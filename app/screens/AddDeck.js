@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { ScrollView } from "react-native";
-import TextInput from "./base/TextInput";
-import Button from "./base/Button";
+import TextInput from "../components/base/TextInput";
+import Button from "../components/base/Button";
 
 export default class AddDeck extends Component {
   static navigationOptions = {

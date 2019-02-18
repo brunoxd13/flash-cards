@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Button, ScrollView } from "react-native";
-import SimpleCardContainer from "./SimpleCardContainer";
+import SimpleCardContainer from "../components/SimpleCardContainer";
 
 export default class Home extends Component {
   static navigationOptions = ({ navigation }) => ({
