@@ -12,7 +12,10 @@ export const reciveDecks = decks => {
 
 export const handleFetchDecks = () => {
   return dispatch => {
-    return Api.fetchDecks().then(decks => dispatch(reciveDecks(decks)));
+    return Api.fetchDecks().then(decks => {
+      console.log("decks", decks);
+      dispatch(reciveDecks(decks));
+    });
   };
 };
 
@@ -24,7 +27,7 @@ export const addDeck = deck => {
 };
 
 export const handleAddDeck = deck => {
-  return async dispatch => {
+  return dispatch => {
     //TODO: fazer utils para converter
     const deckToSave = {
       [deck.title]: {
@@ -32,6 +35,7 @@ export const handleAddDeck = deck => {
       }
     };
 
-    return await Api.addDeck(deckToSave).then(deck => dispatch(addDeck(deck)));
+    Api.addDeck(deckToSave);
+    return dispatch(addDeck(deckToSave));
   };
 };
