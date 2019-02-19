@@ -4,29 +4,27 @@ import { Card } from "./Card";
 import { StrongText, LigthText } from "./Text";
 import { HorizontalLine } from "./HorizontalLine";
 
-export default class CardDetail extends Component {
-  render() {
-    return (
-      <Card padding={35}>
-        <View style={styles.header}>
-          <StrongText>Title</StrongText>
-          <LigthText>5 Questions</LigthText>
-        </View>
+const CardDetail = ({ deck }) => {
+  return (
+    <Card padding={35}>
+      <View style={styles.header}>
+        <StrongText>{deck.title}</StrongText>
+        <LigthText>{deck.questions.length} questions</LigthText>
+      </View>
 
-        <HorizontalLine />
+      <HorizontalLine />
 
-        <View style={styles.header}>
-          <StrongText>History</StrongText>
-        </View>
+      <View style={styles.header}>
+        <StrongText>History</StrongText>
+      </View>
 
-        <View style={styles.history}>
-          <Text>Bruno</Text>
-          <Text>75%</Text>
-        </View>
-      </Card>
-    );
-  }
-}
+      <View style={styles.history}>
+        <Text>Bruno</Text>
+        <Text>75%</Text>
+      </View>
+    </Card>
+  );
+};
 
 const styles = StyleSheet.create({
   header: {
@@ -38,3 +36,5 @@ const styles = StyleSheet.create({
     justifyContent: "space-between"
   }
 });
+
+export default CardDetail;

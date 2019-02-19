@@ -4,7 +4,7 @@ import { StrongText, LigthText } from "./Text";
 import { withNavigation } from "react-navigation";
 
 const SimpleCard = ({ navigation, deck }) => (
-  <CardClickable onPress={() => navigation.navigate("NewDeck")}>
+  <CardClickable onPress={() => navigation.navigate("DeckDetails")}>
     <StrongText>{deck.title}</StrongText>
     <LigthText>{deck.questions.length} questions</LigthText>
   </CardClickable>
