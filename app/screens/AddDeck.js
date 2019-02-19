@@ -8,14 +8,6 @@ import { handleAddDeck } from "../store/actions/decks";
 import { withNavigation } from "react-navigation";
 
 class AddDeck extends Component {
-  static navigationOptions = {
-    headerTitle: "New Deck",
-    headerTintColor: "#FFFFFF",
-    headerStyle: {
-      backgroundColor: "#5EC9F7"
-    }
-  };
-
   constructor(props) {
     super(props);
 

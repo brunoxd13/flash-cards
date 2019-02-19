@@ -4,12 +4,6 @@ import SimpleCardContainer from "../components/SimpleCardContainer";
 
 export default class Home extends Component {
   static navigationOptions = ({ navigation }) => ({
-    headerTitle: "Flash Cards",
-    headerTintColor: "#FFFFFF",
-    headerStyle: {
-      backgroundColor: "#5EC9F7"
-    },
-
     headerRight: (
       <Button
         onPress={() => navigation.navigate("NewDeck")}
