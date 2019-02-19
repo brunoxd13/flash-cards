@@ -1,7 +1,9 @@
 import * as Api from "../../api/decks";
+import { formatDeck } from "../../utils/deck";
 
 export const RECIVE_DECKS = "RECIVE_DECKS";
 export const ADD_DECK = "ADD_DECK";
+export const ADD_QUESTION = "ADD_QUESTION";
 
 export const reciveDecks = decks => {
   return {
@@ -12,10 +14,7 @@ export const reciveDecks = decks => {
 
 export const handleFetchDecks = () => {
   return dispatch => {
-    return Api.fetchDecks().then(decks => {
-      console.log("decks", decks);
-      dispatch(reciveDecks(decks));
-    });
+    return Api.getDecks().then(decks => dispatch(reciveDecks(decks)));
   };
 };
 
@@ -28,14 +27,23 @@ export const addDeck = deck => {
 
 export const handleAddDeck = deck => {
   return dispatch => {
-    //TODO: fazer utils para converter
-    const deckToSave = {
-      [deck.title]: {
-        ...deck
-      }
-    };
+    const deckToSave = formatDeck(deck);
 
-    Api.addDeck(deckToSave);
+    Api.addOrUpdateDeck(deckToSave);
     return dispatch(addDeck(deckToSave));
+  };
+};
+
+export const addQuestion = deck => {
+  return {
+    type: ADD_QUESTION,
+    deck
+  };
+};
+
+export const handleAddQuestion = (deck, question) => {
+  return dispatch => {
+    const deckToSave = Api.addQuestion(deck, question);
+    return dispatch(addQuestion(deckToSave));
   };
 };

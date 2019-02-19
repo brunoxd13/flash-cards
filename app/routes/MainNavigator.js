@@ -2,7 +2,7 @@ import { createAppContainer, createStackNavigator } from "react-navigation";
 import Home from "../screens/Home";
 import AddDeck from "../screens/AddDeck";
 import DeckDetails from "../screens/DeckDetails";
-
+import AddQuestion from "../screens/AddQuestion";
 const navigateDefault = {
   headerTintColor: "#FFFFFF",
   headerStyle: {
@@ -22,6 +22,10 @@ const MainNavigator = createStackNavigator({
   DeckDetails: {
     screen: DeckDetails,
     navigationOptions: { ...navigateDefault, headerTitle: "Deck Dtails" }
+  },
+  AddQuestion: {
+    screen: AddQuestion,
+    navigationOptions: { ...navigateDefault, headerTitle: "New Question" }
   }
 });
 
