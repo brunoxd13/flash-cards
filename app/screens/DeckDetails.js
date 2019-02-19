@@ -3,7 +3,7 @@ import { withNavigation } from "react-navigation";
 import CardDetail from "../components/base/CardDetail";
 
 const DeckDetails = ({ navigation }) => {
-  const { deck } = navigation.getParam("deck");
+  const { deck } = navigation.state.params;
 
   return <CardDetail deck={deck} />;
 };
