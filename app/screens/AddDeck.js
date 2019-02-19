@@ -5,6 +5,8 @@ import { bindActionCreators } from "redux";
 import TextInput from "../components/base/TextInput";
 import Button from "../components/base/Button";
 import { handleAddDeck } from "../store/actions/decks";
+import { withNavigation } from "react-navigation";
+
 class AddDeck extends Component {
   static navigationOptions = {
     headerTitle: "New Deck",
@@ -32,6 +34,7 @@ class AddDeck extends Component {
     const { deckName } = this.state;
     const deck = { title: deckName, questions: [] };
     this.props.handleAddDeck(deck);
+    this.props.navigation.navigate("Home");
   };
 
   render() {
@@ -57,4 +60,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
   null,
   mapDispatchToProps
-)(AddDeck);
+)(withNavigation(AddDeck));
