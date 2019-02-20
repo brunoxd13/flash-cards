@@ -31,15 +31,12 @@ export function setLocalNotification() {
             let tomorrow = new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
             tomorrow.setHours(8);
-            tomorrow.setMintutes(15);
+            tomorrow.setMinutes(30);
 
-            Notifications.scheduleLocalNotificationsAsync(
-              createNotification(),
-              {
-                time: tomorrow,
-                repeat: "day"
-              }
-            );
+            Notifications.scheduleLocalNotificationAsync(createNotification(), {
+              time: tomorrow,
+              repeat: "day"
+            });
 
             AsyncStorage.setItem(NOTIFICATION_KEY, JSON.stringify(true));
           }
