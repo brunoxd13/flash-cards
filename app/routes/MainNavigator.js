@@ -3,6 +3,8 @@ import Home from "../screens/Home";
 import AddDeck from "../screens/AddDeck";
 import DeckDetails from "../screens/DeckDetails";
 import AddQuestion from "../screens/AddQuestion";
+import Quiz from "../screens/Quiz";
+
 const navigateDefault = {
   headerTintColor: "#FFFFFF",
   headerStyle: {
@@ -26,6 +28,10 @@ const MainNavigator = createStackNavigator({
   AddQuestion: {
     screen: AddQuestion,
     navigationOptions: { ...navigateDefault, headerTitle: "New Question" }
+  },
+  Quiz: {
+    screen: Quiz,
+    navigationOptions: { ...navigateDefault, headerTitle: "Quiz" }
   }
 });
 

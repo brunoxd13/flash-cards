@@ -14,10 +14,14 @@ const DeckDetails = ({ navigation, deck }) => {
           style={{ flex: 1 }}
           onPress={() => navigation.navigate("AddQuestion", { deck: deck })}
         >
-          Add Card
+          Add Question
         </Button>
 
-        <Button primary style={{ flex: 1 }}>
+        <Button
+          primary
+          style={{ flex: 1 }}
+          onPress={() => navigation.navigate("Quiz", { deckTitle: deck.title })}
+        >
           Start Quiz
         </Button>
       </View>
