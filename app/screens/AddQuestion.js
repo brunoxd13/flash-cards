@@ -23,7 +23,7 @@ class AddQuestion extends Component {
   }
 
   onAddQuestion = () => {
-    const { deck } = this.props.navigation.state.params;
+    const { deck } = this.props;
 
     const question = {
       question: this.state.question,
@@ -57,10 +57,16 @@ class AddQuestion extends Component {
   }
 }
 
+function mapStateToProps({ decks }, { navigation }) {
+  return {
+    deck: decks[navigation.state.params.deckTitle]
+  };
+}
+
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ handleAddQuestion }, dispatch);
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(AddQuestion);

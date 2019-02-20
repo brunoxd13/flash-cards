@@ -12,7 +12,9 @@ const DeckDetails = ({ navigation, deck }) => {
       <View style={{ flex: 1, flexDirection: "row" }}>
         <Button
           style={{ flex: 1 }}
-          onPress={() => navigation.navigate("AddQuestion", { deck: deck })}
+          onPress={() =>
+            navigation.navigate("AddQuestion", { deckTitle: deck.title })
+          }
         >
           Add Question
         </Button>
