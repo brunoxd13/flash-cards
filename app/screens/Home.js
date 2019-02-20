@@ -1,6 +1,6 @@
 import React from "react";
-import { ScrollView } from "react-native";
 import styled from "styled-components/native";
+import { MainContainer } from "../components/base/MainContainer";
 import SimpleCardContainer from "../components/SimpleCardContainer";
 import { AntDesign } from "@expo/vector-icons";
 
@@ -8,18 +8,10 @@ const ButtonAddDeck = styled.TouchableOpacity`
   margin-right: 10px;
 `;
 
-const MainContainer = styled.View`
-  flex: 1;
-  padding: 3px;
-  background-color: #e5e5e5;
-`;
-
 const Home = () => {
   return (
     <MainContainer>
-      <ScrollView>
-        <SimpleCardContainer />
-      </ScrollView>
+      <SimpleCardContainer />
     </MainContainer>
   );
 };

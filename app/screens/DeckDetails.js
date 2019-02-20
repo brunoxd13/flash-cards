@@ -1,5 +1,6 @@
 import React from "react";
-import { View, ScrollView } from "react-native";
+import { MainContainer } from "../components/base/MainContainer";
+import { View } from "react-native";
 import { withNavigation } from "react-navigation";
 import { connect } from "react-redux";
 import CardDetail from "../components/base/CardDetail";
@@ -7,7 +8,7 @@ import Button from "../components/base/Button";
 
 const DeckDetails = ({ navigation, deck }) => {
   return (
-    <ScrollView style={{ padding: 3, backgroundColor: "#E5E5E5" }}>
+    <MainContainer>
       <CardDetail deck={deck} />
       <View style={{ flex: 1, flexDirection: "row" }}>
         <Button
@@ -27,7 +28,7 @@ const DeckDetails = ({ navigation, deck }) => {
           Start Quiz
         </Button>
       </View>
-    </ScrollView>
+    </MainContainer>
   );
 };
 

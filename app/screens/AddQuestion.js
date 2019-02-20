@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ScrollView } from "react-native";
+import { MainContainer } from "../components/base/MainContainer";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import TextInput from "../components/base/TextInput";
@@ -36,7 +36,7 @@ class AddQuestion extends Component {
 
   render() {
     return (
-      <ScrollView style={{ padding: 3, backgroundColor: "#E5E5E5" }}>
+      <MainContainer>
         <TextInput
           id="question"
           title="Question"
@@ -52,7 +52,7 @@ class AddQuestion extends Component {
         <Button primary onPress={this.onAddQuestion}>
           Add Question
         </Button>
-      </ScrollView>
+      </MainContainer>
     );
   }
 }
