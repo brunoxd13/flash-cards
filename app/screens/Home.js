@@ -1,27 +1,35 @@
-import React, { Component } from "react";
-import { View, TouchableOpacity, ScrollView } from "react-native";
+import React from "react";
+import { ScrollView } from "react-native";
+import styled from "styled-components/native";
 import SimpleCardContainer from "../components/SimpleCardContainer";
 import { AntDesign } from "@expo/vector-icons";
 
-const Home = ({ navigation }) => {
-  const navigationOptions = ({ navigation }) => ({
-    headerRight: (
-      <TouchableOpacity
-        style={{ marginRight: 10 }}
-        onPress={() => navigation.navigate("NewDeck")}
-      >
-        <AntDesign name="pluscircle" size={30} color="white" />
-      </TouchableOpacity>
-    )
-  });
+const ButtonAddDeck = styled.TouchableOpacity`
+  margin-right: 10px;
+`;
 
+const MainContainer = styled.View`
+  flex: 1;
+  padding: 3px;
+  background-color: #e5e5e5;
+`;
+
+const Home = () => {
   return (
-    <View style={{ flex: 1, padding: 3, backgroundColor: "#E5E5E5" }}>
+    <MainContainer>
       <ScrollView>
         <SimpleCardContainer />
       </ScrollView>
-    </View>
+    </MainContainer>
   );
 };
+
+Home.navigationOptions = ({ navigation }) => ({
+  headerRight: (
+    <ButtonAddDeck onPress={() => navigation.navigate("NewDeck")}>
+      <AntDesign name="pluscircle" size={30} color="white" />
+    </ButtonAddDeck>
+  )
+});
 
 export default Home;
