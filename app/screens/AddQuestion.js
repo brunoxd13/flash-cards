@@ -22,7 +22,7 @@ class AddQuestion extends Component {
     this.setState({ [fieldId]: value });
   }
 
-  onAddDeck = () => {
+  onAddQuestion = () => {
     const { deck } = this.props.navigation.state.params;
 
     const question = {
@@ -49,8 +49,8 @@ class AddQuestion extends Component {
           onHandleChange={this.handleFieldChange}
         />
 
-        <Button primary onPress={this.onAddDeck}>
-          Add Deck
+        <Button primary onPress={this.onAddQuestion}>
+          Add Question
         </Button>
       </ScrollView>
     );
