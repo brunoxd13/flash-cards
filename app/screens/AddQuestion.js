@@ -5,6 +5,7 @@ import { bindActionCreators } from "redux";
 import TextInput from "../components/base/TextInput";
 import Button from "../components/base/Button";
 import { handleAddQuestion } from "../store/actions/decks";
+import { Card } from "../components/base/Card";
 
 class AddQuestion extends Component {
   constructor(props) {
@@ -39,17 +40,19 @@ class AddQuestion extends Component {
   render() {
     return (
       <MainContainer>
-        <TextInput
-          id="question"
-          title="Question"
-          onHandleChange={this.handleFieldChange}
-        />
+        <Card>
+          <TextInput
+            id="question"
+            title="Question"
+            onHandleChange={this.handleFieldChange}
+          />
 
-        <TextInput
-          id="answer"
-          title="Answer"
-          onHandleChange={this.handleFieldChange}
-        />
+          <TextInput
+            id="answer"
+            title="Answer"
+            onHandleChange={this.handleFieldChange}
+          />
+        </Card>
 
         <Button primary onPress={this.onAddQuestion}>
           Add Question
