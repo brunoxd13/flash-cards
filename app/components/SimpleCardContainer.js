@@ -11,13 +11,9 @@ class SimpleCardContainer extends Component {
   }
 
   render() {
-    return (
-      <ScrollView>
-        {Object.values(this.props.decks).map(deck => (
-          <SimpleCard key={deck.title} deck={deck} />
-        ))}
-      </ScrollView>
-    );
+    return Object.values(this.props.decks).map(deck => (
+      <SimpleCard key={deck.title} deck={deck} />
+    ));
   }
 }
 
