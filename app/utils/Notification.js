@@ -1,25 +1,29 @@
-import { Notifications, Permissions } from "expo";
 import { AsyncStorage } from "react-native";
+import { Notifications, Permissions } from "expo";
 
 const NOTIFICATION_KEY = "FlashCards:notifications";
 
-function createNotification() {
-  return {
-    title: "Study Now!",
-    body: "Stay tuned to study 👋",
-    ios: {
-      sound: true
-    },
-    android: {
-      sound: true,
-      priority: "high",
-      sticky: false,
-      vibrate: true
-    }
-  };
-}
+export const clearLocalNotifications = () => {
+  return AsyncStorage.removeItem(NOTIFICATION_KEY).then(
+    Notifications.cancelAllScheduledNotificationsAsync
+  );
+};
 
-export function setLocalNotification() {
+const createNotification = () => ({
+  title: "Study reminder",
+  body: "Stay tuned to study 🤓",
+  ios: {
+    sound: true
+  },
+  android: {
+    sound: true,
+    priority: "high",
+    sticky: false,
+    vibrate: true
+  }
+});
+
+export const setLocalNotification = () => {
   AsyncStorage.getItem(NOTIFICATION_KEY)
     .then(JSON.parse)
     .then(data => {
@@ -43,4 +47,4 @@ export function setLocalNotification() {
         });
       }
     });
-}
+};
