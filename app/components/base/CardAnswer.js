@@ -5,8 +5,8 @@ import { HorizontalLine } from "./HorizontalLine";
 import { Container } from "./Container";
 import CardHeader from "./CardHeader";
 
-const CardQuestion = ({ deck, questionIndex }) => {
-  const { question } = deck.questions[questionIndex];
+const CardAnswer = ({ deck, questionIndex }) => {
+  const { answer, question } = deck.questions[questionIndex];
 
   return (
     <Card padding={35}>
@@ -15,12 +15,15 @@ const CardQuestion = ({ deck, questionIndex }) => {
       <HorizontalLine />
 
       <Container center>
-        <StrongText center size={30}>
+        <LigthText center size={18}>
           {question}
+        </LigthText>
+        <StrongText center size={30}>
+          {answer}
         </StrongText>
       </Container>
     </Card>
   );
 };
 
-export default CardQuestion;
+export default CardAnswer;
