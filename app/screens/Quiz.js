@@ -72,7 +72,7 @@ class Quiz extends Component {
     if (showResult) {
       return (
         <QuizResult
-          deck={deck}
+          deckTitle={deck.title}
           result={this.getResult()}
           onRestartQuiz={this.onRestartQuiz}
         />

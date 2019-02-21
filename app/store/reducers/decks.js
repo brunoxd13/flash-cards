@@ -1,4 +1,9 @@
-import { RECIVE_DECKS, ADD_DECK, ADD_QUESTION } from "../actions/decks";
+import {
+  RECIVE_DECKS,
+  ADD_DECK,
+  ADD_QUESTION,
+  ADD_HISTORY
+} from "../actions/decks";
 
 const initialState = {
   React: {
@@ -41,6 +46,12 @@ export default function decks(state = { ...initialState }, action) {
       };
 
     case ADD_QUESTION:
+      return {
+        ...state,
+        ...action.deck
+      };
+
+    case ADD_HISTORY:
       return {
         ...state,
         ...action.deck

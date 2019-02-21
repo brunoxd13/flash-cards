@@ -1,5 +1,5 @@
 import { AsyncStorage } from "react-native";
-import { addQuestionToDeck } from "../utils/deck";
+import { addQuestionToDeck, addHistoryToDeck } from "../utils/deck";
 
 const DECKS_STORAGE_KEY = "FlashCards:decks";
 
@@ -23,6 +23,14 @@ export const resetDecks = () => {
 
 export const addQuestion = (deck, question) => {
   const deckToSave = addQuestionToDeck(deck, question);
+  addOrUpdateDeck(deckToSave);
+  return deckToSave;
+};
+
+export const addHistory = (deck, history) => {
+  const deckToSave = addHistoryToDeck(deck, history);
+  console.log("deckToSave", deckToSave);
+
   addOrUpdateDeck(deckToSave);
   return deckToSave;
 };
