@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { ScrollView } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import SimpleCard from "./base/SimpleCard";
