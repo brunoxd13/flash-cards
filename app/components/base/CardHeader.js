@@ -7,7 +7,7 @@ const CardHeader = ({ deck, questionIndex, ...props }) => (
     <StrongText>{deck.title}</StrongText>
     <LigthText>
       {questionIndex && `${questionIndex} - `}
-      {deck.questions.length} questions
+      {deck.questions ? deck.questions.length : 0} questions
     </LigthText>
   </Container>
 );
