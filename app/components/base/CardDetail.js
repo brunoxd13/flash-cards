@@ -1,22 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Card } from "./Card";
-import { StrongText, LigthText } from "./Text";
+import { StrongText } from "./Text";
 import { HorizontalLine } from "./HorizontalLine";
+import { Container } from "./Container";
+import CardHeader from "./CardHeader";
 
 const CardDetail = ({ deck }) => {
   return (
     <Card padding={35}>
-      <View style={styles.header}>
-        <StrongText>{deck.title}</StrongText>
-        <LigthText>{deck.questions.length} questions</LigthText>
-      </View>
+      <CardHeader center deck={deck} />
 
       <HorizontalLine />
 
-      <View style={styles.header}>
+      <Container center>
         <StrongText>History</StrongText>
-      </View>
+      </Container>
 
       <View style={styles.history}>
         <Text>Bruno</Text>
@@ -27,9 +26,6 @@ const CardDetail = ({ deck }) => {
 };
 
 const styles = StyleSheet.create({
-  header: {
-    alignItems: "center"
-  },
   history: {
     flex: 1,
     flexDirection: "row",

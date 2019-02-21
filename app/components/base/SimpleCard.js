@@ -1,6 +1,6 @@
 import React from "react";
 import { CardClickable } from "./Card";
-import { StrongText, LigthText } from "./Text";
+import CardHeader from "./CardHeader";
 import { withNavigation } from "react-navigation";
 
 const SimpleCard = ({ navigation, deck }) => (
@@ -9,8 +9,7 @@ const SimpleCard = ({ navigation, deck }) => (
       navigation.navigate("DeckDetails", { deckTitle: deck.title })
     }
   >
-    <StrongText>{deck.title}</StrongText>
-    <LigthText>{deck.questions.length} questions</LigthText>
+    <CardHeader deck={deck} />
   </CardClickable>
 );
 
