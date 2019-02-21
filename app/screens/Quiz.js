@@ -34,11 +34,11 @@ class Quiz extends Component {
         showAnswer: false,
         countResult: countResult
       },
-      this.isFinalQustion()
+      this.isFinalQuestion()
     );
   };
 
-  isFinalQustion = () => {
+  isFinalQuestion = () => {
     const { deckLength } = this.props;
 
     if (this.state.questionIndex + 1 == deckLength) {
