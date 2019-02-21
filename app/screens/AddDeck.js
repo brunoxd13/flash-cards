@@ -23,10 +23,12 @@ class AddDeck extends Component {
   }
 
   onAddDeck = () => {
-    const { deckName } = this.state;
-    const deck = { title: deckName, questions: [] };
-    this.props.handleAddDeck(deck);
-    this.props.navigation.navigate("Home");
+    const deckName = this.state.deckName.trim();
+    if (deckName) {
+      const deck = { title: deckName, questions: [] };
+      this.props.handleAddDeck(deck);
+      this.props.navigation.navigate("Home");
+    }
   };
 
   render() {

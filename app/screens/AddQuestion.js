@@ -26,12 +26,14 @@ class AddQuestion extends Component {
     const { deck } = this.props;
 
     const question = {
-      question: this.state.question,
-      answer: this.state.answer
+      question: this.state.question.trim(),
+      answer: this.state.answer.trim()
     };
 
-    this.props.handleAddQuestion(deck, question);
-    this.props.navigation.navigate("DeckDetails", { deckTitle: deck.title });
+    if (question.question && question.answer) {
+      this.props.handleAddQuestion(deck, question);
+      this.props.navigation.navigate("DeckDetails", { deckTitle: deck.title });
+    }
   };
 
   render() {
