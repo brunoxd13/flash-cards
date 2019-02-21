@@ -3,7 +3,7 @@ import { MainContainer } from "../components/base/MainContainer";
 import { View } from "react-native";
 import { withNavigation } from "react-navigation";
 import { connect } from "react-redux";
-import CardDetail from "../components/base/CardDetail";
+import CardDetail from "../components/CardDetail";
 import Button from "../components/base/Button";
 
 const DeckDetails = ({ navigation, deck }) => {

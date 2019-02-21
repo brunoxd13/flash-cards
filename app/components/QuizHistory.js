@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components/native";
-import { Container } from "./Container";
-import { StrongText, LigthText } from "./Text";
-import { getDateFromTimestamp } from "../../utils/date";
+import { Container } from "./base/Container";
+import { StrongText, LigthText } from "./base/Text";
+import { getDateFromTimestamp } from "../utils/date";
 
 const HistoriyContainer = styled.View`
   flex: 1;

@@ -1,6 +1,6 @@
 import React from "react";
-import { StrongText, LigthText } from "./Text";
-import { Container } from "./Container";
+import { StrongText, LigthText } from "./base/Text";
+import { Container } from "./base/Container";
 
 const CardHeader = ({ deck, questionIndex, ...props }) => (
   <Container {...props}>

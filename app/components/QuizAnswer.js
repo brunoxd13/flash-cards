@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import { MainContainer } from "./base/MainContainer";
-import CardAnswer from "./base/CardAnswer";
+import CardAnswer from "./CardAnswer";
 import Button from "./base/Button";
 
 const QuizAnswer = ({ deck, questionIndex, onAnswer }) => {

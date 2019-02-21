@@ -1,6 +1,6 @@
 import React from "react";
-import { Card } from "./Card";
-import { HorizontalLine } from "./HorizontalLine";
+import { Card } from "./base/Card";
+import { HorizontalLine } from "./base/HorizontalLine";
 import CardHeader from "./CardHeader";
 import QuizHistory from "./QuizHistory";
 

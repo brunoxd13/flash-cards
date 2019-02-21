@@ -1,8 +1,8 @@
 import React from "react";
-import { Card } from "./Card";
-import { StrongText, LigthText } from "./Text";
-import { HorizontalLine } from "./HorizontalLine";
-import { Container } from "./Container";
+import { Card } from "./base/Card";
+import { StrongText } from "./base/Text";
+import { HorizontalLine } from "./base/HorizontalLine";
+import { Container } from "./base/Container";
 import CardHeader from "./CardHeader";
 
 const CardQuestion = ({ deck, questionIndex }) => {

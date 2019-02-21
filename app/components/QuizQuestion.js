@@ -1,6 +1,6 @@
 import React from "react";
 import { MainContainer } from "./base/MainContainer";
-import CardQuestion from "./base/CardQuestion";
+import CardQuestion from "./CardQuestion";
 import Button from "./base/Button";
 
 const QuizQuestion = ({ deck, questionIndex, onShowAnswer }) => {

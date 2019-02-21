@@ -1,7 +1,7 @@
 import React from "react";
-import { CardClickable } from "./Card";
-import CardHeader from "./CardHeader";
 import { withNavigation } from "react-navigation";
+import { CardClickable } from "./base/Card";
+import CardHeader from "./CardHeader";
 
 const SimpleCard = ({ navigation, deck }) => (
   <CardClickable
