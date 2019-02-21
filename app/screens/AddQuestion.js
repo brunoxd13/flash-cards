@@ -27,7 +27,7 @@ class AddQuestion extends Component {
 
     const question = {
       question: this.state.question,
-      answer: this.state.question
+      answer: this.state.answer
     };
 
     this.props.handleAddQuestion(deck, question);
