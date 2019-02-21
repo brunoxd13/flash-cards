@@ -5,7 +5,8 @@ import QuizQuestion from "../components/QuizQuestion";
 import QuizAnswer from "../components/QuizAnswer";
 import QuizResult from "../components/QuizResult";
 import { handleAddQuestion } from "../store/actions/decks";
-import { Text } from "react-native";
+import { Container } from "../components/base/Container";
+import { StrongText, LigthText } from "../components/base/Text";
 
 class Quiz extends Component {
   constructor(props) {
@@ -66,7 +67,12 @@ class Quiz extends Component {
     const { questionIndex, showAnswer, showResult } = this.state;
 
     if (!deckLength) {
-      return <Text>Oh Noooo :(</Text>;
+      return (
+        <Container center>
+          <StrongText>No decks yet :(</StrongText>
+          <LigthText>Go ahead and add now!</LigthText>
+        </Container>
+      );
     }
 
     if (showResult) {
